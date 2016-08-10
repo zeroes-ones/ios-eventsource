@@ -34,6 +34,7 @@ static NSString *const ESEventRetryKey = @"retry";
 @property (nonatomic, strong) NSMutableDictionary *listeners;
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
 @property (nonatomic, assign) NSTimeInterval retryInterval;
+@property (nonatomic, strong) NSString *mobileKey;
 @property (nonatomic, strong) id lastEventID;
 
 - (void)_open;
@@ -43,22 +44,22 @@ static NSString *const ESEventRetryKey = @"retry";
 
 @implementation EventSource
 
-+ (instancetype)eventSourceWithURL:(NSURL *)URL
++ (instancetype)eventSourceWithURL:(NSURL *)URL mobileKey:(NSString *)mobileKey
 {
-    return [[EventSource alloc] initWithURL:URL];
+    return [[EventSource alloc] initWithURL:URL mobileKey:mobileKey];
 }
 
-+ (instancetype)eventSourceWithURL:(NSURL *)URL timeoutInterval:(NSTimeInterval)timeoutInterval
++ (instancetype)eventSourceWithURL:(NSURL *)URL mobileKey:(NSString *)mobileKey timeoutInterval:(NSTimeInterval)timeoutInterval
 {
-    return [[EventSource alloc] initWithURL:URL timeoutInterval:timeoutInterval];
+    return [[EventSource alloc] initWithURL:URL mobileKey:mobileKey timeoutInterval:timeoutInterval];
 }
 
-- (instancetype)initWithURL:(NSURL *)URL
+- (instancetype)initWithURL:(NSURL *)URL mobileKey:(NSString *)mobileKey
 {
-    return [self initWithURL:URL timeoutInterval:ES_DEFAULT_TIMEOUT];
+    return [self initWithURL:URL mobileKey:mobileKey timeoutInterval:ES_DEFAULT_TIMEOUT];
 }
 
-- (instancetype)initWithURL:(NSURL *)URL timeoutInterval:(NSTimeInterval)timeoutInterval
+- (instancetype)initWithURL:(NSURL *)URL mobileKey:(NSString *)mobileKey timeoutInterval:(NSTimeInterval)timeoutInterval
 {
     self = [super init];
     if (self) {
@@ -66,7 +67,7 @@ static NSString *const ESEventRetryKey = @"retry";
         _eventURL = URL;
         _timeoutInterval = timeoutInterval;
         _retryInterval = ES_RETRY_INTERVAL;
-
+        _mobileKey = mobileKey;
         messageQueue = dispatch_queue_create("co.cwbrn.eventsource-queue", DISPATCH_QUEUE_SERIAL);
         connectionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
 
@@ -231,6 +232,7 @@ static NSString *const ESEventRetryKey = @"retry";
 {
     wasClosed = NO;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.eventURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:self.timeoutInterval];
+    [request addValue:[NSString stringWithFormat:@"api_key %@",self.mobileKey] forHTTPHeaderField:@"Authorization"];
     if (self.lastEventID) {
         [request setValue:self.lastEventID forHTTPHeaderField:@"Last-Event-ID"];
     }
