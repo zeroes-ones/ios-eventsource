@@ -165,14 +165,12 @@ static NSString *const ESEventRetryKey = @"retry";
         }
 
         if (!line || line.length == 0) {
-            if (event.data != nil) {
                 dispatch_async(messageQueue, ^{
                     [self _dispatchEvent:event];
                 });
                 
                 event = [Event new];
                 event.readyState = kEventStateOpen;
-            }
             continue;
         }
 
