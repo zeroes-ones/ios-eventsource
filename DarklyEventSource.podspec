@@ -9,8 +9,10 @@ Pod::Spec.new do |s|
 	s.source_files = 'EventSource', 'EventSource/EventSource.{h,m}'
 	s.ios.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(SDKROOT)/Developer/Library/Frameworks" "$(DEVELOPER_LIBRARY_DIR)/Frameworks"' }
 	s.osx.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks"' }
-	s.ios.deployment_target = '5.0'
+	s.ios.deployment_target = '8.0'
 	s.osx.deployment_target = '10.7'
+	s.watchos.deployment_target = '2.0'
+	s.tvos.deployment_target = '9.0'
 	s.requires_arc = true
 	s.xcconfig = { 'OTHER_LDFLAGS' => '-lobjc' }
 end
