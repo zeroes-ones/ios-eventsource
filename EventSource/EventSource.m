@@ -214,7 +214,9 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 - (void)_open
 {
     wasClosed = NO;
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.eventURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:self.timeoutInterval];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.eventURL
+                                                           cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                       timeoutInterval:self.timeoutInterval];
     [request addValue:[NSString stringWithFormat:@"api_key %@",self.mobileKey] forHTTPHeaderField:@"Authorization"];
     if (self.lastEventID) {
         [request setValue:self.lastEventID forHTTPHeaderField:@"Last-Event-ID"];
