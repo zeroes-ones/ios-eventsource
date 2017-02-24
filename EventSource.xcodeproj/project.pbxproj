@@ -7,18 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		281714831DD735E400F7A8E0 /* EventSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28291CC01D0B2FC500B06A27 /* EventSource.framework */; };
-		281714841DD735E400F7A8E0 /* EventSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28291CC01D0B2FC500B06A27 /* EventSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		281714881DD7362E00F7A8E0 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2838333317A1BFFE00C0141D /* EventSource.m */; };
-		281714891DD7363700F7A8E0 /* EventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2838333117A1BFFE00C0141D /* EventSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2817148A1DD736A200F7A8E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2838333F17A1C02900C0141D /* UIKit.framework */; };
-		281714941DD7436600F7A8E0 /* EventSource-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 281714921DD7436600F7A8E0 /* EventSource-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		281714981DD7437C00F7A8E0 /* EventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2838333117A1BFFE00C0141D /* EventSource.h */; };
-		281714991DD7438000F7A8E0 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2838333317A1BFFE00C0141D /* EventSource.m */; };
-		28291CC31D0B2FC500B06A27 /* EventSource-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 28291CC21D0B2FC500B06A27 /* EventSource-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28291CC81D0B2FE700B06A27 /* EventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2838333117A1BFFE00C0141D /* EventSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28291CC91D0B2FE700B06A27 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2838333317A1BFFE00C0141D /* EventSource.m */; };
-		28291CD21D0B30DD00B06A27 /* EventSource-Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 28291CD11D0B30DD00B06A27 /* EventSource-Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2838332D17A1BFFE00C0141D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2838332C17A1BFFE00C0141D /* Foundation.framework */; };
 		2838333217A1BFFE00C0141D /* EventSource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2838333117A1BFFE00C0141D /* EventSource.h */; };
 		2838333417A1BFFE00C0141D /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2838333317A1BFFE00C0141D /* EventSource.m */; };
@@ -34,16 +23,6 @@
 		2838335B17A1C02900C0141D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2838335917A1C02900C0141D /* ViewController.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		281714851DD735E400F7A8E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2838332117A1BFFD00C0141D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28291CBF1D0B2FC500B06A27;
-			remoteInfo = "EventSource-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		281714871DD735E400F7A8E0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -51,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				281714841DD735E400F7A8E0 /* EventSource.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,15 +48,6 @@
 
 /* Begin PBXFileReference section */
 		281714801DD7354400F7A8E0 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		281714901DD7436600F7A8E0 /* EventSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EventSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		281714921DD7436600F7A8E0 /* EventSource-watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventSource-watchOS.h"; sourceTree = "<group>"; };
-		281714931DD7436600F7A8E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28291CC01D0B2FC500B06A27 /* EventSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EventSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		28291CC21D0B2FC500B06A27 /* EventSource-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventSource-iOS.h"; sourceTree = "<group>"; };
-		28291CC41D0B2FC500B06A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28291CCF1D0B30DD00B06A27 /* EventSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EventSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		28291CD11D0B30DD00B06A27 /* EventSource-Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventSource-Mac.h"; sourceTree = "<group>"; };
-		28291CD31D0B30DD00B06A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2838332917A1BFFE00C0141D /* libEventSource.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEventSource.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2838332C17A1BFFE00C0141D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2838333017A1BFFE00C0141D /* EventSource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventSource-Prefix.pch"; sourceTree = "<group>"; };
@@ -102,27 +71,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2817148C1DD7436600F7A8E0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CBC1D0B2FC500B06A27 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CCB1D0B30DD00B06A27 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2838332617A1BFFD00C0141D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +85,6 @@
 			files = (
 				2817148A1DD736A200F7A8E0 /* UIKit.framework in Frameworks */,
 				2838334117A1C02900C0141D /* Foundation.framework in Frameworks */,
-				281714831DD735E400F7A8E0 /* EventSource.framework in Frameworks */,
 				2838334317A1C02900C0141D /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,41 +92,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		281714911DD7436600F7A8E0 /* EventSource-watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				281714921DD7436600F7A8E0 /* EventSource-watchOS.h */,
-				281714931DD7436600F7A8E0 /* Info.plist */,
-			);
-			path = "EventSource-watchOS";
-			sourceTree = "<group>";
-		};
-		28291CC11D0B2FC500B06A27 /* EventSource-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				28291CC21D0B2FC500B06A27 /* EventSource-iOS.h */,
-				28291CC41D0B2FC500B06A27 /* Info.plist */,
-			);
-			path = "EventSource-iOS";
-			sourceTree = "<group>";
-		};
-		28291CD01D0B30DD00B06A27 /* EventSource-Mac */ = {
-			isa = PBXGroup;
-			children = (
-				28291CD11D0B30DD00B06A27 /* EventSource-Mac.h */,
-				28291CD31D0B30DD00B06A27 /* Info.plist */,
-			);
-			path = "EventSource-Mac";
-			sourceTree = "<group>";
-		};
 		2838332017A1BFFD00C0141D = {
 			isa = PBXGroup;
 			children = (
 				2838332E17A1BFFE00C0141D /* EventSource */,
 				2838334417A1C02900C0141D /* EventViewer */,
-				28291CC11D0B2FC500B06A27 /* EventSource-iOS */,
-				28291CD01D0B30DD00B06A27 /* EventSource-Mac */,
-				281714911DD7436600F7A8E0 /* EventSource-watchOS */,
 				2838332B17A1BFFE00C0141D /* Frameworks */,
 				2838332A17A1BFFE00C0141D /* Products */,
 			);
@@ -190,9 +107,6 @@
 			children = (
 				2838332917A1BFFE00C0141D /* libEventSource.a */,
 				2838333E17A1C02900C0141D /* EventViewer.app */,
-				28291CC01D0B2FC500B06A27 /* EventSource.framework */,
-				28291CCF1D0B30DD00B06A27 /* EventSource.framework */,
-				281714901DD7436600F7A8E0 /* EventSource.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,91 +169,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		2817148D1DD7436600F7A8E0 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				281714981DD7437C00F7A8E0 /* EventSource.h in Headers */,
-				281714941DD7436600F7A8E0 /* EventSource-watchOS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CBD1D0B2FC500B06A27 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28291CC81D0B2FE700B06A27 /* EventSource.h in Headers */,
-				28291CC31D0B2FC500B06A27 /* EventSource-iOS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CCC1D0B30DD00B06A27 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				281714891DD7363700F7A8E0 /* EventSource.h in Headers */,
-				28291CD21D0B30DD00B06A27 /* EventSource-Mac.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		2817148F1DD7436600F7A8E0 /* EventSource-watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 281714951DD7436600F7A8E0 /* Build configuration list for PBXNativeTarget "EventSource-watchOS" */;
-			buildPhases = (
-				2817148B1DD7436600F7A8E0 /* Sources */,
-				2817148C1DD7436600F7A8E0 /* Frameworks */,
-				2817148D1DD7436600F7A8E0 /* Headers */,
-				2817148E1DD7436600F7A8E0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "EventSource-watchOS";
-			productName = "EventSource-watchOS";
-			productReference = 281714901DD7436600F7A8E0 /* EventSource.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		28291CBF1D0B2FC500B06A27 /* EventSource-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 28291CC71D0B2FC500B06A27 /* Build configuration list for PBXNativeTarget "EventSource-iOS" */;
-			buildPhases = (
-				28291CBB1D0B2FC500B06A27 /* Sources */,
-				28291CBC1D0B2FC500B06A27 /* Frameworks */,
-				28291CBD1D0B2FC500B06A27 /* Headers */,
-				28291CBE1D0B2FC500B06A27 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "EventSource-iOS";
-			productName = "EventSource-iOS";
-			productReference = 28291CC01D0B2FC500B06A27 /* EventSource.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		28291CCE1D0B30DD00B06A27 /* EventSource-Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 28291CD41D0B30DD00B06A27 /* Build configuration list for PBXNativeTarget "EventSource-Mac" */;
-			buildPhases = (
-				28291CCA1D0B30DD00B06A27 /* Sources */,
-				28291CCB1D0B30DD00B06A27 /* Frameworks */,
-				28291CCC1D0B30DD00B06A27 /* Headers */,
-				28291CCD1D0B30DD00B06A27 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "EventSource-Mac";
-			productName = "EventSource-Mac";
-			productReference = 28291CCF1D0B30DD00B06A27 /* EventSource.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		2838332817A1BFFD00C0141D /* EventSource */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2838333717A1BFFE00C0141D /* Build configuration list for PBXNativeTarget "EventSource" */;
@@ -369,7 +199,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				281714861DD735E400F7A8E0 /* PBXTargetDependency */,
 			);
 			name = EventViewer;
 			productName = EventViewer;
@@ -384,19 +213,6 @@
 			attributes = {
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Neil Cowburn";
-				TargetAttributes = {
-					2817148F1DD7436600F7A8E0 = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 98Z69DGY5E;
-						ProvisioningStyle = Automatic;
-					};
-					28291CBF1D0B2FC500B06A27 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					28291CCE1D0B30DD00B06A27 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-				};
 			};
 			buildConfigurationList = 2838332417A1BFFD00C0141D /* Build configuration list for PBXProject "EventSource" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -411,36 +227,12 @@
 			projectRoot = "";
 			targets = (
 				2838332817A1BFFD00C0141D /* EventSource */,
-				28291CBF1D0B2FC500B06A27 /* EventSource-iOS */,
-				28291CCE1D0B30DD00B06A27 /* EventSource-Mac */,
-				2817148F1DD7436600F7A8E0 /* EventSource-watchOS */,
 				2838333D17A1C02900C0141D /* EventViewer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2817148E1DD7436600F7A8E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CBE1D0B2FC500B06A27 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CCD1D0B30DD00B06A27 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2838333C17A1C02900C0141D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,30 +248,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2817148B1DD7436600F7A8E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				281714991DD7438000F7A8E0 /* EventSource.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CBB1D0B2FC500B06A27 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28291CC91D0B2FE700B06A27 /* EventSource.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28291CCA1D0B30DD00B06A27 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				281714881DD7362E00F7A8E0 /* EventSource.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2838332517A1BFFD00C0141D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,14 +267,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		281714861DD735E400F7A8E0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 28291CBF1D0B2FC500B06A27 /* EventSource-iOS */;
-			targetProxy = 281714851DD735E400F7A8E0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2838334717A1C02900C0141D /* InfoPlist.strings */ = {
@@ -528,236 +288,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		281714961DD7436600F7A8E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 98Z69DGY5E;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "EventSource-watchOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = co.cwbrn.EventSource;
-				PRODUCT_NAME = EventSource;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Debug;
-		};
-		281714971DD7436600F7A8E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CODE_SIGN_IDENTITY = "";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 98Z69DGY5E;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "EventSource-watchOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = co.cwbrn.EventSource;
-				PRODUCT_NAME = EventSource;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Release;
-		};
-		28291CC51D0B2FC500B06A27 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "EventSource-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "$(SRCROOT)/EventSource/module.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = co.cwbrn.EventSource;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		28291CC61D0B2FC500B06A27 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "EventSource-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "$(SRCROOT)/EventSource/module.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = co.cwbrn.EventSource;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		28291CD51D0B30DD00B06A27 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "EventSource-Mac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "$(SRCROOT)/EventSource/module.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = co.cwbrn.EventSource;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		28291CD61D0B30DD00B06A27 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "EventSource-Mac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "$(SRCROOT)/EventSource/module.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = co.cwbrn.EventSource;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		2838333517A1BFFE00C0141D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -793,6 +323,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = EventSource;
 				SDKROOT = iphoneos;
@@ -828,6 +359,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = EventSource;
 				SDKROOT = iphoneos;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -900,32 +432,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		281714951DD7436600F7A8E0 /* Build configuration list for PBXNativeTarget "EventSource-watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				281714961DD7436600F7A8E0 /* Debug */,
-				281714971DD7436600F7A8E0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		28291CC71D0B2FC500B06A27 /* Build configuration list for PBXNativeTarget "EventSource-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				28291CC51D0B2FC500B06A27 /* Debug */,
-				28291CC61D0B2FC500B06A27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		28291CD41D0B30DD00B06A27 /* Build configuration list for PBXNativeTarget "EventSource-Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				28291CD51D0B30DD00B06A27 /* Debug */,
-				28291CD61D0B30DD00B06A27 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2838332417A1BFFD00C0141D /* Build configuration list for PBXProject "EventSource" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
