@@ -11,6 +11,7 @@
 
 static CGFloat const ES_RETRY_INTERVAL = 1.0;
 static CGFloat const ES_DEFAULT_TIMEOUT = 300.0;
+static CGFloat const ES_MAX_RECONNECT_TIME = 180.0;
 
 static NSString *const ESKeyValueDelimiter = @":";
 static NSString *const ESEventSeparatorLFLF = @"\n\n";
@@ -34,6 +35,7 @@ static NSString *const ESEventRetryKey = @"retry";
 @property (nonatomic, strong) NSMutableDictionary *listeners;
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
 @property (nonatomic, assign) NSTimeInterval retryInterval;
+@property (nonatomic, assign) NSInteger retryAttempt;
 @property (nonatomic, strong) NSString *mobileKey;
 @property (nonatomic, strong) id lastEventID;
 
@@ -67,6 +69,7 @@ static NSString *const ESEventRetryKey = @"retry";
         _eventURL = URL;
         _timeoutInterval = timeoutInterval;
         _retryInterval = ES_RETRY_INTERVAL;
+        _retryAttempt = 0;
         _mobileKey = mobileKey;
         messageQueue = dispatch_queue_create("co.cwbrn.eventsource-queue", DISPATCH_QUEUE_SERIAL);
         connectionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
@@ -203,13 +206,11 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
     [self _dispatchEvent:e type:ReadyStateEvent];
     [self _dispatchEvent:e type:ErrorEvent];
 
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_retryInterval * NSEC_PER_SEC));
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)([self increaseIntervalWithBackoff] * NSEC_PER_SEC));
     dispatch_after(popTime, connectionQueue, ^(void){
         [self _open];
     });
 }
-
-// -------------------------------------------------------------------------------------------------------------------------------------
 
 - (void)_open
 {
@@ -254,6 +255,12 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
     if (event.event != nil) {
         [self _dispatchEvent:event type:event.event];
     }
+}
+
+- (CGFloat)increaseIntervalWithBackoff {
+    _retryAttempt++;
+    CGFloat retryInterval = MIN(ES_MAX_RECONNECT_TIME, _retryInterval * pow(2, _retryAttempt));
+    return retryInterval;
 }
 
 @end
