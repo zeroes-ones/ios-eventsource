@@ -258,8 +258,7 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 
 - (CGFloat)increaseIntervalWithBackoff {
     _retryAttempt++;
-    CGFloat retryInterval = MIN(ES_MAX_RECONNECT_TIME, _retryInterval * pow(_retryAttempt, 2));
-    return retryInterval;
+    return arc4random_uniform(MIN(ES_MAX_RECONNECT_TIME, _retryInterval * pow(2, _retryAttempt)));
 }
 
 @end
