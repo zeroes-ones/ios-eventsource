@@ -11,6 +11,7 @@
 
 static CGFloat const ES_RETRY_INTERVAL = 1.0;
 static CGFloat const ES_DEFAULT_TIMEOUT = 300.0;
+static CGFloat const ES_MAX_RECONNECT_TIME = 180.0;
 
 static NSString *const ESKeyValueDelimiter = @":";
 static NSString *const ESEventSeparatorLFLF = @"\n\n";
@@ -34,6 +35,7 @@ static NSString *const ESEventRetryKey = @"retry";
 @property (nonatomic, strong) NSMutableDictionary *listeners;
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
 @property (nonatomic, assign) NSTimeInterval retryInterval;
+@property (nonatomic, assign) NSInteger retryAttempt;
 @property (nonatomic, strong) NSString *mobileKey;
 @property (nonatomic, strong) id lastEventID;
 
@@ -67,10 +69,11 @@ static NSString *const ESEventRetryKey = @"retry";
         _eventURL = URL;
         _timeoutInterval = timeoutInterval;
         _retryInterval = ES_RETRY_INTERVAL;
+        _retryAttempt = 0;
         _mobileKey = mobileKey;
         messageQueue = dispatch_queue_create("co.cwbrn.eventsource-queue", DISPATCH_QUEUE_SERIAL);
         connectionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-
+        
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_retryInterval * NSEC_PER_SEC));
         dispatch_after(popTime, connectionQueue, ^(void){
             [self _open];
@@ -114,8 +117,6 @@ static NSString *const ESEventRetryKey = @"retry";
     [self.eventSourceTask cancel];
 }
 
-// -----------------------------------------------------------------------------------------------------------------------------------------
-
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
 didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
 {
@@ -124,11 +125,12 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
         // Opened
         Event *e = [Event new];
         e.readyState = kEventStateOpen;
-
+        
+        _retryAttempt = 0;
         [self _dispatchEvent:e type:ReadyStateEvent];
         [self _dispatchEvent:e type:OpenEvent];
     }
-
+    
     if (completionHandler) {
         completionHandler(NSURLSessionResponseAllow);
     }
@@ -138,34 +140,34 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 {
     NSString *eventString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSArray *lines = [eventString componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-
+    
     Event *event = [Event new];
     event.readyState = kEventStateOpen;
-
+    
     for (NSString *line in lines) {
         if ([line hasPrefix:ESKeyValueDelimiter]) {
             continue;
         }
-
+        
         if (!line || line.length == 0) {
-                dispatch_async(messageQueue, ^{
-                    [self _dispatchEvent:event];
-                });
-
-                event = [Event new];
-                event.readyState = kEventStateOpen;
+            dispatch_async(messageQueue, ^{
+                [self _dispatchEvent:event];
+            });
+            
+            event = [Event new];
+            event.readyState = kEventStateOpen;
             continue;
         }
-
+        
         @autoreleasepool {
             NSScanner *scanner = [NSScanner scannerWithString:line];
             scanner.charactersToBeSkipped = [NSCharacterSet whitespaceCharacterSet];
-
+            
             NSString *key, *value;
             [scanner scanUpToString:ESKeyValueDelimiter intoString:&key];
             [scanner scanString:ESKeyValueDelimiter intoString:nil];
             [scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&value];
-
+            
             if (key && value) {
                 if ([key isEqualToString:ESEventEventKey]) {
                     event.event = value;
@@ -189,27 +191,25 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error
 {
     self.eventSourceTask = nil;
-
+    
     if (wasClosed) {
         return;
     }
-
+    
     Event *e = [Event new];
     e.readyState = kEventStateClosed;
     e.error = error ?: [NSError errorWithDomain:@""
-                                  code:e.readyState
-                              userInfo:@{ NSLocalizedDescriptionKey: @"Connection with the event source was closed." }];
-
+                                           code:e.readyState
+                                       userInfo:@{ NSLocalizedDescriptionKey: @"Connection with the event source was closed." }];
+    
     [self _dispatchEvent:e type:ReadyStateEvent];
     [self _dispatchEvent:e type:ErrorEvent];
-
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_retryInterval * NSEC_PER_SEC));
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)([self increaseIntervalWithBackoff] * NSEC_PER_SEC));
     dispatch_after(popTime, connectionQueue, ^(void){
         [self _open];
     });
 }
-
-// -------------------------------------------------------------------------------------------------------------------------------------
 
 - (void)_open
 {
@@ -219,19 +219,19 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
     if (self.lastEventID) {
         [request setValue:self.lastEventID forHTTPHeaderField:@"Last-Event-ID"];
     }
-
+    
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
                                                           delegate:self
                                                      delegateQueue:[NSOperationQueue currentQueue]];
-
+    
     self.eventSourceTask = [session dataTaskWithRequest:request];
     [self.eventSourceTask resume];
-
+    
     Event *e = [Event new];
     e.readyState = kEventStateConnecting;
-
+    
     [self _dispatchEvent:e type:ReadyStateEvent];
-
+    
     if (![NSThread isMainThread]) {
         CFRunLoopRun();
     }
@@ -250,15 +250,19 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 - (void)_dispatchEvent:(Event *)event
 {
     [self _dispatchEvent:event type:MessageEvent];
-
+    
     if (event.event != nil) {
         [self _dispatchEvent:event type:event.event];
     }
 }
 
+- (CGFloat)increaseIntervalWithBackoff {
+    _retryAttempt++;
+    return arc4random_uniform(MIN(ES_MAX_RECONNECT_TIME, _retryInterval * pow(2, _retryAttempt)));
+}
+
 @end
 
-// ---------------------------------------------------------------------------------------------------------------------
 
 @implementation Event
 
@@ -266,13 +270,13 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 {
     NSString *state = nil;
     switch (self.readyState) {
-        case kEventStateConnecting:
+            case kEventStateConnecting:
             state = @"CONNECTING";
             break;
-        case kEventStateOpen:
+            case kEventStateOpen:
             state = @"OPEN";
             break;
-        case kEventStateClosed:
+            case kEventStateClosed:
             state = @"CLOSED";
             break;
     }
