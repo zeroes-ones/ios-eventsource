@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "69DE1C241E61765000CF816C"
-               BuildableName = "EventSource.framework"
-               BlueprintName = "EventSource"
-               ReferencedContainer = "container:EventSource.xcodeproj">
+               BuildableName = "LDEventSource.framework"
+               BlueprintName = "LDEventSource"
+               ReferencedContainer = "container:LDEventSource.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69DE1C241E61765000CF816C"
-            BuildableName = "EventSource.framework"
-            BlueprintName = "EventSource"
-            ReferencedContainer = "container:EventSource.xcodeproj">
+            BuildableName = "LDEventSource.framework"
+            BlueprintName = "LDEventSource"
+            ReferencedContainer = "container:LDEventSource.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69DE1C241E61765000CF816C"
-            BuildableName = "EventSource.framework"
-            BlueprintName = "EventSource"
-            ReferencedContainer = "container:EventSource.xcodeproj">
+            BuildableName = "LDEventSource.framework"
+            BlueprintName = "LDEventSource"
+            ReferencedContainer = "container:LDEventSource.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

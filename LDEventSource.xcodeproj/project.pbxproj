@@ -18,11 +18,12 @@
 		2838335517A1C02900C0141D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2838335417A1C02900C0141D /* Default-568h@2x.png */; };
 		2838335817A1C02900C0141D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2838335717A1C02900C0141D /* ViewController.m */; };
 		2838335B17A1C02900C0141D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2838335917A1C02900C0141D /* ViewController.xib */; };
-		69247F001E634B8700F7543E /* EventSource-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 2838333017A1BFFE00C0141D /* EventSource-Prefix.pch */; };
-		6947B6EC1E62251600C8CB4B /* EventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2838333117A1BFFE00C0141D /* EventSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6947B6ED1E62252000C8CB4B /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2838333317A1BFFE00C0141D /* EventSource.m */; };
-		69DE1C2C1E61765000CF816C /* EventSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE1C251E61765000CF816C /* EventSource.framework */; };
-		69DE1C2D1E61765000CF816C /* EventSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE1C251E61765000CF816C /* EventSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69DE1C2C1E61765000CF816C /* LDEventSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE1C251E61765000CF816C /* LDEventSource.framework */; };
+		69DE1C2D1E61765000CF816C /* LDEventSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69DE1C251E61765000CF816C /* LDEventSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		832C787A1F291AA700E334A2 /* LDEventSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 832C78791F291AA700E334A2 /* LDEventSource.h */; };
+		832C787C1F291AB300E334A2 /* LDEventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C787B1F291AB300E334A2 /* LDEventSource.m */; };
+		832C787E1F291AC000E334A2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 832C787D1F291AC000E334A2 /* Info.plist */; };
+		832C78801F291ACE00E334A2 /* LDEventSource-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 832C787F1F291ACE00E334A2 /* LDEventSource-Prefix.pch */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				69DE1C2D1E61765000CF816C /* EventSource.framework in Embed Frameworks */,
+				69DE1C2D1E61765000CF816C /* LDEventSource.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,11 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		281714801DD7354400F7A8E0 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		2838332C17A1BFFE00C0141D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2838333017A1BFFE00C0141D /* EventSource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventSource-Prefix.pch"; sourceTree = "<group>"; };
-		2838333117A1BFFE00C0141D /* EventSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventSource.h; sourceTree = "<group>"; };
-		2838333317A1BFFE00C0141D /* EventSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventSource.m; sourceTree = "<group>"; };
 		2838333E17A1C02900C0141D /* EventViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2838333F17A1C02900C0141D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2838334217A1C02900C0141D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,8 +67,11 @@
 		2838335617A1C02900C0141D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2838335717A1C02900C0141D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2838335A17A1C02900C0141D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		6947B6EE1E6225CD00C8CB4B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69DE1C251E61765000CF816C /* EventSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EventSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69DE1C251E61765000CF816C /* LDEventSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LDEventSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		832C78791F291AA700E334A2 /* LDEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDEventSource.h; path = LDEventSource/LDEventSource.h; sourceTree = SOURCE_ROOT; };
+		832C787B1F291AB300E334A2 /* LDEventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDEventSource.m; path = LDEventSource/LDEventSource.m; sourceTree = SOURCE_ROOT; };
+		832C787D1F291AC000E334A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LDEventSource/Info.plist; sourceTree = SOURCE_ROOT; };
+		832C787F1F291ACE00E334A2 /* LDEventSource-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LDEventSource-Prefix.pch"; path = "LDEventSource/LDEventSource-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69DE1C2C1E61765000CF816C /* EventSource.framework in Frameworks */,
+				69DE1C2C1E61765000CF816C /* LDEventSource.framework in Frameworks */,
 				2817148A1DD736A200F7A8E0 /* UIKit.framework in Frameworks */,
 				2838334117A1C02900C0141D /* Foundation.framework in Frameworks */,
 				2838334317A1C02900C0141D /* CoreGraphics.framework in Frameworks */,
@@ -99,7 +99,7 @@
 		2838332017A1BFFD00C0141D = {
 			isa = PBXGroup;
 			children = (
-				2838332E17A1BFFE00C0141D /* EventSource */,
+				2838332E17A1BFFE00C0141D /* LDEventSource */,
 				2838334417A1C02900C0141D /* EventViewer */,
 				2838332B17A1BFFE00C0141D /* Frameworks */,
 				2838332A17A1BFFE00C0141D /* Products */,
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2838333E17A1C02900C0141D /* EventViewer.app */,
-				69DE1C251E61765000CF816C /* EventSource.framework */,
+				69DE1C251E61765000CF816C /* LDEventSource.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,22 +125,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2838332E17A1BFFE00C0141D /* EventSource */ = {
+		2838332E17A1BFFE00C0141D /* LDEventSource */ = {
 			isa = PBXGroup;
 			children = (
-				2838333117A1BFFE00C0141D /* EventSource.h */,
-				2838333317A1BFFE00C0141D /* EventSource.m */,
+				832C78791F291AA700E334A2 /* LDEventSource.h */,
+				832C787B1F291AB300E334A2 /* LDEventSource.m */,
 				2838332F17A1BFFE00C0141D /* Supporting Files */,
 			);
+			name = LDEventSource;
 			path = EventSource;
 			sourceTree = "<group>";
 		};
 		2838332F17A1BFFE00C0141D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6947B6EE1E6225CD00C8CB4B /* Info.plist */,
-				2838333017A1BFFE00C0141D /* EventSource-Prefix.pch */,
-				281714801DD7354400F7A8E0 /* module.modulemap */,
+				832C787D1F291AC000E334A2 /* Info.plist */,
+				832C787F1F291ACE00E334A2 /* LDEventSource-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -179,8 +179,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6947B6EC1E62251600C8CB4B /* EventSource.h in Headers */,
-				69247F001E634B8700F7543E /* EventSource-Prefix.pch in Headers */,
+				832C78801F291ACE00E334A2 /* LDEventSource-Prefix.pch in Headers */,
+				832C787A1F291AA700E334A2 /* LDEventSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +206,9 @@
 			productReference = 2838333E17A1C02900C0141D /* EventViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		69DE1C241E61765000CF816C /* EventSource */ = {
+		69DE1C241E61765000CF816C /* LDEventSource */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69DE1C301E61765000CF816C /* Build configuration list for PBXNativeTarget "EventSource" */;
+			buildConfigurationList = 69DE1C301E61765000CF816C /* Build configuration list for PBXNativeTarget "LDEventSource" */;
 			buildPhases = (
 				69DE1C201E61765000CF816C /* Sources */,
 				69DE1C211E61765000CF816C /* Frameworks */,
@@ -219,9 +219,9 @@
 			);
 			dependencies = (
 			);
-			name = EventSource;
+			name = LDEventSource;
 			productName = "EventSource-iOS";
-			productReference = 69DE1C251E61765000CF816C /* EventSource.framework */;
+			productReference = 69DE1C251E61765000CF816C /* LDEventSource.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 		2838332117A1BFFD00C0141D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Neil Cowburn";
 				TargetAttributes = {
 					69DE1C241E61765000CF816C = {
@@ -239,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2838332417A1BFFD00C0141D /* Build configuration list for PBXProject "EventSource" */;
+			buildConfigurationList = 2838332417A1BFFD00C0141D /* Build configuration list for PBXProject "LDEventSource" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -251,7 +251,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69DE1C241E61765000CF816C /* EventSource */,
+				69DE1C241E61765000CF816C /* LDEventSource */,
 				2838333D17A1C02900C0141D /* EventViewer */,
 			);
 		};
@@ -274,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832C787E1F291AC000E334A2 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6947B6ED1E62252000C8CB4B /* EventSource.m in Sources */,
+				832C787C1F291AB300E334A2 /* LDEventSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +304,7 @@
 /* Begin PBXTargetDependency section */
 		69DE1C2B1E61765000CF816C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69DE1C241E61765000CF816C /* EventSource */;
+			target = 69DE1C241E61765000CF816C /* LDEventSource */;
 			targetProxy = 69DE1C2A1E61765000CF816C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -366,7 +367,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = EventSource;
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -401,7 +402,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = EventSource;
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -455,14 +456,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "$(SRCROOT)/EventSource/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LDEventSource/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchdarkly.EventSource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator watchos watchsimulator";
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
@@ -491,14 +492,14 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "$(SRCROOT)/EventSource/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/LDEventSource/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.launchdarkly.EventSource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx appletvos appletvsimulator watchos watchsimulator";
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
@@ -510,7 +511,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2838332417A1BFFD00C0141D /* Build configuration list for PBXProject "EventSource" */ = {
+		2838332417A1BFFD00C0141D /* Build configuration list for PBXProject "LDEventSource" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2838333517A1BFFE00C0141D /* Debug */,
@@ -528,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69DE1C301E61765000CF816C /* Build configuration list for PBXNativeTarget "EventSource" */ = {
+		69DE1C301E61765000CF816C /* Build configuration list for PBXNativeTarget "LDEventSource" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69DE1C2E1E61765000CF816C /* Debug */,
