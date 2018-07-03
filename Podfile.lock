@@ -1,0 +1,24 @@
+PODS:
+  - OHHTTPStubs (4.8.0):
+    - OHHTTPStubs/Default (= 4.8.0)
+  - OHHTTPStubs/Core (4.8.0)
+  - OHHTTPStubs/Default (4.8.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (4.8.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (4.8.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (4.8.0)
+
+DEPENDENCIES:
+  - OHHTTPStubs (~> 4.2)
+
+SPEC CHECKSUMS:
+  OHHTTPStubs: b393565822317305b87a1440d4c7aff131679f66
+
+PODFILE CHECKSUM: 447f23615b8f490de6c83e01cc6937fe713c1ca0
+
+COCOAPODS: 1.4.0
